@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sean T. Hanna for Webster Town Supervisor</title>
+    <meta
+      name="description"
+      content="Sean Hanna for Webster Town Supervisor: halting overdevelopment, saving open spaces, reducing taxes and spending, and putting police, parks, and patriotism first."
+    />
+    <style>
+      :root {
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: #e2e8f0;
+        --paper: #f8fafc;
+        --white: #ffffff;
+        --red: #b91c1c;
+        --red-dark: #991b1b;
+        --blue: #1d4ed8;
+        --navy: #111827;
+        --gold: #d6a444;
+        --green: #166534;
+        --shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav {
+        display: flex;
+        max-width: 1180px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 24px;
+      }
+
+      .brand {
+        min-width: 190px;
+      }
+
+      .brand-name {
+        font-size: 1.25rem;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .brand-kicker {
+        margin-top: 4px;
+        color: #64748b;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: #334155;
+        font-size: 0.93rem;
+        font-weight: 750;
+      }
+
+      .nav-links a:hover {
+        color: var(--red);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 0 18px;
+        background: var(--red);
+        color: var(--white);
+        font-size: 0.95rem;
+        font-weight: 800;
+        line-height: 1;
+        cursor: pointer;
+        transition:
+          transform 180ms ease,
+          background 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: var(--red-dark);
+      }
+
+      .button.secondary {
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      .button.secondary:hover {
+        background: #e2e8f0;
+      }
+
+      .button.outline {
+        border-color: rgba(255, 255, 255, 0.7);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .button.outline:hover {
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: #123f8c;
+        color: var(--white);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(15, 23, 42, 0.42), rgba(15, 23, 42, 0.08) 55%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 38%);
+      }
+
+      .hero-inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.78fr);
+        max-width: 1180px;
+        min-height: calc(100vh - 78px);
+        margin: 0 auto;
+        align-items: center;
+        gap: 56px;
+        padding: 72px 24px 80px;
+      }
+
+      .hero-content {
+        max-width: 780px;
+        animation: rise 650ms ease both;
+      }
+
+      .hero-photo {
+        align-self: center;
+        justify-self: end;
+        width: min(100%, 430px);
+        animation: rise 650ms ease 120ms both;
+      }
+
+      .hero-photo img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: center top;
+        box-shadow: 0 28px 70px rgba(5, 12, 30, 0.42);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 22px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        padding: 9px 14px;
+        background: rgba(255, 255, 255, 0.13);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .hero h1 {
+        max-width: 880px;
+        margin: 0 0 24px;
+        font-size: clamp(3rem, 8vw, 6.6rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .office-line {
+        margin: -10px 0 20px;
+        color: #f8fafc;
+        font-size: clamp(1.25rem, 3vw, 2rem);
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-motto {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 24px;
+        color: #f8fafc;
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .hero p {
+        max-width: 770px;
+        margin: 0 0 26px;
+        color: #e2e8f0;
+        font-size: clamp(1.15rem, 2vw, 1.4rem);
+        line-height: 1.65;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .neighbor-line {
+        display: inline-flex;
+        margin-top: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        border-radius: 999px;
+        padding: 9px 14px;
+        background: rgba(255, 255, 255, 0.13);
+        color: #f8fafc;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .commitment {
+        position: relative;
+        max-width: 1180px;
+        margin: -48px auto 0;
+        padding: 0 24px;
+      }
+
+      .commitment-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+        gap: 22px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        border-radius: 8px;
+        padding: 24px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .commitment-title {
+        margin: 0;
+        font-size: clamp(1.45rem, 2.4vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .commitment-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 18px;
+      }
+
+      .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: #1f2937;
+        font-weight: 760;
+        line-height: 1.35;
+      }
+
+      .icon {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        color: var(--red);
+      }
+
+      .section {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 88px 24px;
+      }
+
+      .section.center {
+        text-align: center;
+      }
+
+      .label {
+        margin: 0 0 12px;
+        color: var(--red);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .section-lede {
+        max-width: 780px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 1.12rem;
+        line-height: 1.75;
+      }
+
+      #priorities {
+        max-width: none;
+        background:
+          linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.52)),
+          url("assets/islandview.jpg") center 42% / cover no-repeat;
+        color: var(--white);
+      }
+
+      #priorities > * {
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #priorities .label {
+        color: #ffffff;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+      }
+
+      #priorities .section-lede {
+        color: #ffffff;
+        font-weight: 650;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.72);
+      }
+
+      #priorities h2 {
+        color: #ffffff;
+        text-shadow: 0 3px 24px rgba(0, 0, 0, 0.8);
+      }
+
+      .priority-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .priority-card {
+        min-height: 245px;
+        border: 1px solid var(--blue);
+        border-radius: 8px;
+        padding: 28px;
+        background: #ffffff;
+        box-shadow: 0 20px 52px rgba(0, 0, 0, 0.26);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .priority-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .priority-card .icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 22px;
+      }
+
+      .priority-card h3 {
+        margin: 0 0 12px;
+        color: var(--blue);
+        font-size: 1.45rem;
+        line-height: 1.15;
+      }
+
+      .priority-card p {
+        color: var(--blue);
+      }
+
+      .copy p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.68;
+      }
+
+      .experience-band {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(15, 23, 42, 0.58), rgba(15, 23, 42, 0.36)),
+          url("assets/experience-sunset.jpg") center 48% / cover no-repeat;
+        color: var(--white);
+      }
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 52px;
+        align-items: start;
+      }
+
+      .copy p + p {
+        margin-top: 18px;
+      }
+
+      .experience-band .label {
+        color: #fecaca;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+      }
+
+      .experience-band .copy p {
+        color: #f8fafc;
+        font-weight: 600;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.68);
+      }
+
+      .experience-band h2 {
+        color: #ffffff;
+        text-shadow: 0 3px 24px rgba(0, 0, 0, 0.82);
+      }
+
+      .background-box {
+        border-left: 6px solid var(--red);
+        border-radius: 8px;
+        padding: 28px;
+        background: #f1f5f9;
+      }
+
+      .background-box h3 {
+        margin: 0 0 18px;
+        font-size: 1.5rem;
+      }
+
+      .background-list {
+        display: grid;
+        gap: 13px;
+        margin: 0;
+        padding: 0;
+        color: #334155;
+        list-style: none;
+      }
+
+      .background-list li {
+        display: flex;
+        gap: 10px;
+        line-height: 1.45;
+      }
+
+      .background-list li::before {
+        flex: 0 0 auto;
+        color: var(--red);
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .credential-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .credential-card {
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        border-radius: 8px;
+        padding: 22px;
+        background: #f8fafc;
+      }
+
+      .credential-card h3 {
+        margin: 0 0 12px;
+        color: var(--red);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .credential-card ul {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        color: #334155;
+        line-height: 1.45;
+        list-style: none;
+      }
+
+      .credential-card strong {
+        display: block;
+        color: var(--ink);
+      }
+
+      .credential-card span {
+        display: block;
+        color: var(--muted);
+      }
+
+      .hometown-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 42px;
+        align-items: start;
+        max-width: none;
+        background: var(--red);
+        color: var(--white);
+      }
+
+      .hometown-grid > * {
+        max-width: 1180px;
+      }
+
+      .hometown-grid .label,
+      .hometown-grid .copy p,
+      .hometown-grid .hometown-list li {
+        color: var(--white);
+      }
+
+      .autobiography {
+        background: url("assets/lake-view.jpg") center 48% / cover no-repeat;
+      }
+
+      .autobiography .label {
+        display: inline-flex;
+        border-radius: 8px;
+        padding: 8px 12px;
+        background: var(--white);
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16);
+      }
+
+      .autobiography-space {
+        max-width: 880px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 34px;
+        background: #f8fafc;
+        box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+      }
+
+      .autobiography-space p {
+        margin: 0;
+        color: #334155;
+        font-size: 1.08rem;
+        line-height: 1.78;
+      }
+
+      .autobiography-space p + p {
+        margin-top: 18px;
+      }
+
+      .hometown-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 34px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hometown-list li {
+        display: flex;
+        gap: 12px;
+        font-size: 1.18rem;
+        font-weight: 760;
+        line-height: 1.5;
+      }
+
+      .hometown-list li::before {
+        flex: 0 0 auto;
+        color: var(--white);
+        content: "•";
+        font-weight: 900;
+      }
+
+      .vision {
+        max-width: 950px;
+      }
+
+      .vision p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.25rem;
+        line-height: 1.8;
+      }
+
+      .cta {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      .cta-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 82px 24px;
+        text-align: center;
+      }
+
+      .cta p {
+        margin: 0 auto 30px;
+        max-width: 760px;
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        line-height: 1.75;
+      }
+
+      .cta-actions {
+        justify-content: center;
+      }
+
+      .contact-phone {
+        display: flex;
+        max-width: 100%;
+        margin: 0 auto 10px;
+        justify-content: center;
+        color: var(--white);
+        font-size: clamp(1.35rem, 4vw, 2.4rem);
+        font-weight: 900;
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+        text-align: center;
+      }
+
+      .site-url {
+        display: inline-flex;
+        color: #f8fafc;
+        font-size: 1.12rem;
+        font-weight: 850;
+      }
+
+      .vote-section {
+        background: #f8fafc;
+      }
+
+      .vote-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+        border: 1px solid #dbeafe;
+        border-left: 8px solid var(--blue);
+        border-radius: 8px;
+        padding: 34px;
+        background: var(--white);
+        box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+      }
+
+      .vote-panel h2 {
+        margin-bottom: 10px;
+      }
+
+      .vote-panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      footer {
+        padding: 24px;
+        background: var(--white);
+        color: #64748b;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 880px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1fr;
+          min-height: 760px;
+          padding-top: 58px;
+        }
+
+        .hero-photo {
+          justify-self: start;
+          width: min(100%, 360px);
+        }
+
+        .commitment-panel,
+        .experience-grid,
+        .hometown-grid,
+        .vote-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .commitment-list,
+        .priority-grid,
+        .credential-grid,
+        .hometown-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav {
+          align-items: flex-start;
+          padding: 14px 18px;
+        }
+
+        .nav .button {
+          display: none;
+        }
+
+        .hero-inner,
+        .section,
+        .cta-inner {
+          padding-inline: 18px;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .commitment {
+          margin-top: -34px;
+          padding-inline: 18px;
+        }
+
+        .priority-card {
+          min-height: auto;
+        }
+
+        .autobiography-space {
+          min-height: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Sean Hanna campaign home">
+          <div class="brand-name">Sean T. Hanna</div>
+          <div class="brand-kicker">For Webster Town Supervisor</div>
+        </a>
+        <div class="nav-links" aria-label="Page sections">
+          <a href="#priorities">Priorities</a>
+          <a href="#experience">Experience</a>
+          <a href="#autobiography">Autobiography</a>
+          <a href="#hometown">Hometown</a>
+          <a href="#vote">Vote</a>
+          <a href="#contact">Get Involved</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <h1 id="hero-title">Sean Hanna</h1>
+            <div class="office-line">For Town Supervisor</div>
+            <div class="hero-motto">
+              <span>Less Shouting.</span>
+              <span>More Listening.</span>
+            </div>
+            <p>Because 40 years of experience matters.</p>
+            <div class="hero-actions">
+              <a class="button" href="#contact">Join the Campaign</a>
+              <a class="button outline" href="#priorities">See the Priorities</a>
+            </div>
+            <div class="neighbor-line">Your friendly neighbor. Your trusted professional.</div>
+          </div>
+          <div class="hero-photo" aria-label="Sean Hanna headshot">
+            <img src="assets/headshot-2026.jpeg" alt="Sean Hanna" />
+          </div>
+        </div>
+      </section>
+
+      <section id="priorities" class="section center">
+        <p class="label">Priorities</p>
+        <h2>Common-Sense Priorities for Webster</h2>
+        <p class="section-lede">
+          Sean Hanna is running to protect Webster's character, respect taxpayers,
+          and bring calm, experienced leadership to town government.
+        </p>
+
+        <div class="priority-grid">
+          <article class="priority-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 7h18v12H3z" stroke="currentColor" stroke-width="2" />
+              <path d="M16 11h5v4h-5a2 2 0 0 1 0-4Z" stroke="currentColor" stroke-width="2" />
+              <path d="M7 7V5h10v2" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <h3>Halting Overdevelopment</h3>
+            <p>Growth should serve Webster's residents and neighborhoods, not overwhelm the town we call home.</p>
+          </article>
+          <article class="priority-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 21c8-1 14-7 14-17-8 0-14 6-14 14v3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M5 19c3-5 7-8 12-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <h3>Saving Open Spaces</h3>
+            <p>Open spaces, parks, and farmland help define Webster's quality of life and deserve strong local protection.</p>
+          </article>
+          <article class="priority-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m3 11 9-8 9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5 10v10h14V10" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            </svg>
+            <h3>Reducing Taxes &amp; Spending</h3>
+            <p>Families need a town government that watches every dollar and keeps affordability at the center of every decision.</p>
+          </article>
+          <article class="priority-card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 10h16" stroke="currentColor" stroke-width="2" />
+              <path d="M6 10v9M10 10v9M14 10v9M18 10v9" stroke="currentColor" stroke-width="2" />
+              <path d="M3 19h18M12 3l8 5H4l8-5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+            </svg>
+            <h3>Police, Parks, and Patriotism</h3>
+            <p>Sean will stand for safe neighborhoods, strong public spaces, and civic pride in the community Webster built together.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-band">
+        <div class="section experience-grid">
+          <div class="copy">
+            <p class="label">Experience</p>
+            <h2>Because 40 Years of Experience Matters</h2>
+            <p>
+              Sean Hanna has led in business, environmental protection, elected
+              office, law enforcement, and private practice. Webster deserves a
+              supervisor who already knows how to listen, lead, and get results.
+            </p>
+            <p>
+              He brings practical experience from the courtroom, the boardroom,
+              state and county government, and the Webster community itself.
+            </p>
+          </div>
+          <div class="credential-grid" aria-label="Sean Hanna experience">
+            <article class="credential-card">
+              <h3>Webster Business Owner</h3>
+              <ul>
+                <li>
+                  <strong>True North Packaging, Inc.</strong>
+                  <span>Co-Founder, President</span>
+                </li>
+                <li>
+                  <strong>All-American Home Care</strong>
+                  <span>Co-Founder, Chief Strategic Officer</span>
+                </li>
+                <li>
+                  <strong>Hanna Properties</strong>
+                  <span>Founder, President</span>
+                </li>
+              </ul>
+            </article>
+            <article class="credential-card">
+              <h3>Environmental Leader</h3>
+              <ul>
+                <li>
+                  <strong>NYS Dept. of Environmental Conservation</strong>
+                  <span>Director</span>
+                </li>
+                <li>
+                  <strong>Great Lakes Commission</strong>
+                  <span>Commissioner</span>
+                </li>
+              </ul>
+            </article>
+            <article class="credential-card">
+              <h3>Elected Office</h3>
+              <ul>
+                <li><strong>Monroe County Legislator</strong></li>
+                <li><strong>New York State Assemblyman</strong></li>
+              </ul>
+            </article>
+            <article class="credential-card">
+              <h3>Law Enforcement</h3>
+              <ul>
+                <li><strong>Felony Trial Prosecutor</strong></li>
+              </ul>
+            </article>
+            <article class="credential-card">
+              <h3>Law Practice</h3>
+              <ul>
+                <li><strong>Partner, Woods Oviatt</strong></li>
+                <li><strong>Deputy County Attorney</strong></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="autobiography" class="autobiography">
+        <div class="section">
+          <p class="label">Autobiography</p>
+          <div class="autobiography-space" aria-label="Sean Hanna autobiography">
+            <p>
+              I like to joke that I haven't gone very far in life. I still live
+              in my childhood home, attend my childhood church, and I was even
+              elected to the same New York State Assembly seat my father held
+              when I was a child. My shoes are stuck in Webster.
+            </p>
+            <p>
+              I graduated from Boston College and Wake Forest University School
+              of Law, and throughout my career I have had the opportunity to
+              serve in both the public and private sectors. I worked as a felony
+              trial prosecutor, served as a Monroe County Legislator, and
+              represented our community in the New York State Assembly. I also
+              represented New York State on the international Great Lakes
+              Commission and served as Director of the New York State Department
+              of Environmental Conservation.
+            </p>
+            <p>
+              In the private sector, I founded and operated health care,
+              manufacturing, and real estate companies that created hundreds of
+              jobs in Monroe County. I was also a partner at Rochester's largest
+              downtown law firm.
+            </p>
+            <p>
+              Most importantly, Webster has always been home. My wife, Marlene,
+              and I have been married for 24 years, and we are blessed with two
+              children and two grandchildren, all of whom live in Monroe County.
+              I have also spent many years coaching Rochester Youth Hockey and
+              CYO basketball at St. Rita's- experiences that have meant a great
+              deal to me and kept me closely connected to Webster.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="hometown" class="section hometown-grid">
+        <div class="copy">
+          <p class="label">Our Hometown Guy</p>
+          <h2>Rooted in Webster</h2>
+          <p>
+            Sean Hanna's commitment to Webster is personal. He was raised here,
+            learned here, played here, coached here, worships here, and built
+            businesses here.
+          </p>
+        </div>
+        <ul class="hometown-list">
+          <li>Born and raised in Webster</li>
+          <li>Attended Webster schools</li>
+          <li>Played on Webster sports teams</li>
+          <li>Coached Webster Youth Sports</li>
+          <li>Attends church in Webster</li>
+          <li>Owns a Webster business</li>
+        </ul>
+      </section>
+
+      <section id="vote" class="vote-section">
+        <div class="section">
+          <div class="vote-panel">
+            <div>
+              <p class="label">Register to Vote</p>
+              <h2>Register or Find Your Polling Location</h2>
+              <p>
+                Visit the Monroe County Board of Elections to register to vote,
+                check voter information, or find your polling place.
+              </p>
+            </div>
+            <a class="button" href="https://www.monroecounty.gov/elections-voter">Board of Elections</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <div class="cta-inner">
+          <h2>Questions?</h2>
+          <p>
+            Email Sean at
+          </p>
+          <a class="contact-phone" href="mailto:seanhannaforsupervisor@gmail.com">seanhannaforsupervisor@gmail.com</a>
+          <div class="cta-actions">
+            <a class="button" href="mailto:seanhannaforsupervisor@gmail.com">Email Sean</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Paid for by Friends of Sean Hanna. © 2026 Sean Hanna for Webster Town Supervisor.</footer>
+  </body>
+</html>
