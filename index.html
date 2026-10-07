@@ -556,6 +556,18 @@
         text-align: center;
       }
 
+
+      .signup-panel { max-width: 680px; margin: 34px auto 0; padding: 28px; background: #fff; border-radius: 8px; color: var(--ink); text-align: left; }
+      .signup-panel h3 { margin: 0 0 12px; font-size: 1.5rem; }
+      .signup-panel p { margin: 0 0 16px; color: var(--muted); font-size: .95rem; line-height: 1.6; }
+      .signup-panel label.field-label { display: block; margin: 16px 0 6px; font-weight: 750; }
+      .signup-panel input[type="text"], .signup-panel input[type="email"], .signup-panel input[type="tel"] { display: block; width: 100%; border: 1px solid #94a3b8; border-radius: 6px; padding: 12px; font: inherit; }
+      .signup-panel .consent-label { display: flex; align-items: flex-start; gap: 10px; margin: 22px 0 10px; line-height: 1.5; font-weight: 700; }
+      .signup-panel .consent-label input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+      .signup-panel .consent-disclosure { font-size: .87rem; color: #334155; }
+      .signup-panel a, footer a { text-decoration: underline; text-underline-offset: 3px; }
+      .signup-panel .submit-note { margin-top: 12px; font-size: .85rem; }
+
       footer {
         padding: 24px;
         background: var(--white);
@@ -856,10 +868,52 @@
           <div class="cta-actions">
             <a class="button" href="mailto:seanhannaforsupervisor@gmail.com">Email Sean</a>
           </div>
+          <form class="signup-panel" id="campaign-opt-in-form">
+            <h3>Stay Connected with the Campaign</h3>
+            <p>All fields are optional. You can contact the campaign without signing up for text messages.</p>
+            <label class="field-label" for="signup-name">Name (optional)</label>
+            <input id="signup-name" name="name" type="text" autocomplete="name" />
+            <label class="field-label" for="signup-email">Email (optional)</label>
+            <input id="signup-email" name="email" type="email" autocomplete="email" />
+            <label class="field-label" for="signup-phone">Phone number (optional)</label>
+            <input id="signup-phone" name="phone" type="tel" autocomplete="tel" />
+            <label class="consent-label" for="signup-sms">
+              <input id="signup-sms" name="sms_consent" type="checkbox" value="yes" />
+              <span>Yes, I would like to receive text messages.</span>
+            </label>
+            <p class="consent-disclosure">By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from Friends of Sean Hanna at the number provided. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <a href="/privacy/">Privacy Policy &amp; Terms</a>.</p>
+            <button class="button" type="submit">Submit</button>
+            <p class="submit-note">Submitting opens your email app with your information prepared. Please send that email to complete your request. Text messages are optional and only requested when you check the box and provide a phone number.</p>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer>Paid for by Friends of Sean Hanna. © 2026 Sean Hanna for Webster Town Supervisor.</footer>
+    <footer>Paid for by Friends of Sean Hanna. © 2026 Sean Hanna for Webster Town Supervisor. <a href="/privacy/">Privacy Policy &amp; Terms</a></footer>
+    <script>
+      document.getElementById('campaign-opt-in-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const name = document.getElementById('signup-name').value.trim();
+        const email = document.getElementById('signup-email').value.trim();
+        const phone = document.getElementById('signup-phone').value.trim();
+        const consent = document.getElementById('signup-sms').checked;
+        if (consent && !phone) {
+          alert('Please enter a phone number to request text messages, or uncheck the optional text-message box.');
+          return;
+        }
+        const lines = [
+          'Campaign website contact request',
+          'Name: ' + (name || 'Not provided'),
+          'Email: ' + (email || 'Not provided'),
+          'Phone: ' + (phone || 'Not provided'),
+          'SMS opt-in: ' + (consent && phone ? 'YES - voluntarily checked' : 'NO'),
+          'Consent language shown: By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from Friends of Sean Hanna at the number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. Privacy Policy & Terms at https://www.hannaforsupervisor.com/privacy/',
+          'Sent using email client; request is not complete until email is sent.'
+        ];
+        window.location.href = 'mailto:seanhannaforsupervisor@gmail.com?subject=' +
+          encodeURIComponent('Campaign website contact / optional SMS opt-in') +
+          '&body=' + encodeURIComponent(lines.join('\n'));
+      });
+    </script>
   </body>
 </html>
