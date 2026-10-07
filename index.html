@@ -568,6 +568,10 @@
       .signup-panel a, footer a { text-decoration: underline; text-underline-offset: 3px; }
       .signup-panel .submit-note { margin-top: 12px; font-size: .85rem; }
 
+      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+      .submit-success { color:#166534 !important; font-weight:700; }
+      .submit-error { color:#b91c1c !important; font-weight:700; }
+
       footer {
         padding: 24px;
         background: var(--white);
@@ -882,8 +886,13 @@
               <span>Yes, I would like to receive text messages.</span>
             </label>
             <p class="consent-disclosure">By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from Friends of Sean Hanna at the number provided. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <a href="/privacy/">Privacy Policy &amp; Terms</a>.</p>
-            <button class="button" type="submit">Submit</button>
-            <p class="submit-note">Submitting opens your email app with your information prepared. Please send that email to complete your request. Text messages are optional and only requested when you check the box and provide a phone number.</p>
+            <div class="sr-only" aria-hidden="true">
+              <label for="signup-website">Website</label>
+              <input id="signup-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <button class="button" id="signup-submit" type="submit">Submit</button>
+            <p class="submit-note">Text messages are optional and only requested when you check the box and provide a phone number.</p>
+            <p id="signup-status" class="submit-note" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -891,28 +900,53 @@
 
     <footer>Paid for by Friends of Sean Hanna. © 2026 Sean Hanna for Webster Town Supervisor. <a href="/privacy/">Privacy Policy &amp; Terms</a></footer>
     <script>
-      document.getElementById('campaign-opt-in-form').addEventListener('submit', function (event) {
+      document.getElementById('campaign-opt-in-form').addEventListener('submit', async function (event) {
         event.preventDefault();
+
+        const form = event.currentTarget;
+        const button = document.getElementById('signup-submit');
+        const status = document.getElementById('signup-status');
         const name = document.getElementById('signup-name').value.trim();
         const email = document.getElementById('signup-email').value.trim();
         const phone = document.getElementById('signup-phone').value.trim();
         const consent = document.getElementById('signup-sms').checked;
+        const website = document.getElementById('signup-website').value.trim();
+
+        status.className = 'submit-note';
+        status.textContent = '';
+
         if (consent && !phone) {
-          alert('Please enter a phone number to request text messages, or uncheck the optional text-message box.');
+          status.classList.add('submit-error');
+          status.textContent = 'Please enter a phone number to request text messages, or uncheck the optional text-message box.';
           return;
         }
-        const lines = [
-          'Campaign website contact request',
-          'Name: ' + (name || 'Not provided'),
-          'Email: ' + (email || 'Not provided'),
-          'Phone: ' + (phone || 'Not provided'),
-          'SMS opt-in: ' + (consent && phone ? 'YES - voluntarily checked' : 'NO'),
-          'Consent language shown: By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from Friends of Sean Hanna at the number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. Privacy Policy & Terms at https://www.hannaforsupervisor.com/privacy/',
-          'Sent using email client; request is not complete until email is sent.'
-        ];
-        window.location.href = 'mailto:seanhannaforsupervisor@gmail.com?subject=' +
-          encodeURIComponent('Campaign website contact / optional SMS opt-in') +
-          '&body=' + encodeURIComponent(lines.join('\n'));
+
+        button.disabled = true;
+        button.textContent = 'Submitting...';
+
+        try {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, smsConsent: consent, website })
+          });
+
+          const result = await response.json().catch(() => ({}));
+
+          if (!response.ok) {
+            throw new Error(result.error || 'Unable to submit the form.');
+          }
+
+          form.reset();
+          status.classList.add('submit-success');
+          status.textContent = 'Thank you — your information has been submitted.';
+        } catch (error) {
+          status.classList.add('submit-error');
+          status.textContent = 'Sorry, your submission could not be sent. Please email seanhannaforsupervisor@gmail.com.';
+        } finally {
+          button.disabled = false;
+          button.textContent = 'Submit';
+        }
       });
     </script>
   </body>
