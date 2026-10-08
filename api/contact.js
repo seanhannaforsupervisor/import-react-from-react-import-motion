@@ -24,10 +24,6 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
 
-    if (smsConsent && !phone) {
-      return res.status(400).json({ error: 'A phone number is required when opting in to text messages.' });
-    }
-
     const submittedAt = new Date().toISOString();
     const forwardedFor = req.headers['x-forwarded-for'];
     const ip = Array.isArray(forwardedFor) ? forwardedFor[0] : String(forwardedFor || '').split(',')[0].trim();
