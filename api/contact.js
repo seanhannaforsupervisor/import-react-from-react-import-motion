@@ -7,10 +7,6 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!process.env.RESEND_API_KEY) {
-    return res.status(503).json({ error: 'Email service is not configured yet.' });
-  }
-
   try {
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
     const name = String(body.name || '').trim().slice(0, 200);
@@ -18,6 +14,18 @@ export default async function handler(req, res) {
     const phone = String(body.phone || '').trim().slice(0, 50);
     const smsConsent = body.smsConsent === true;
     const website = String(body.website || '').trim();
+
+    const isCompletelyBlank = !name && !email && !phone && !smsConsent;
+
+    // A blank submission is valid because every visible field is optional.
+    // No email needs to be sent when the visitor submits no information.
+    if (isCompletelyBlank) {
+      return res.status(200).json({ ok: true, blank: true });
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      return res.status(503).json({ error: 'Email service is not configured yet.' });
+    }
 
     // Honeypot for basic bot protection.
     if (website) {
