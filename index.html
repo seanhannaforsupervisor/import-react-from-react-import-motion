@@ -915,12 +915,6 @@
         status.className = 'submit-note';
         status.textContent = '';
 
-        if (consent && !phone) {
-          status.classList.add('submit-error');
-          status.textContent = 'Please enter a phone number to request text messages, or uncheck the optional text-message box.';
-          return;
-        }
-
         button.disabled = true;
         button.textContent = 'Submitting...';
 
