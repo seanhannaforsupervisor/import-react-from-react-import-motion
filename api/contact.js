@@ -1,5 +1,5 @@
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'seanhannaforsupervisor@gmail.com';
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Friends of Sean Hanna <onboarding@resend.dev>';
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Webster Republican Committee <onboarding@resend.dev>';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
