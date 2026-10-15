@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     const ip = Array.isArray(forwardedFor) ? forwardedFor[0] : String(forwardedFor || '').split(',')[0].trim();
     const userAgent = String(req.headers['user-agent'] || '').slice(0, 500);
 
-    const consentLanguage = 'By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from Friends of Sean Hanna at the number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. Privacy Policy & Terms at https://www.hannaforsupervisor.com/privacy/';
+    const consentLanguage = 'By signing up, you consent to receive campaign updates, event information, and get-out-the-vote reminders via text message from the Webster Republican Committee at the number provided. Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. Privacy Policy & Terms at https://www.hannaforsupervisor.com/privacy/';
 
     const text = [
       'New campaign website submission',
